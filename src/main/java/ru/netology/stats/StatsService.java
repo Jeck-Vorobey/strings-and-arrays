@@ -30,10 +30,10 @@ public class StatsService {
     }
 
 
-    public int minSales(int[] sales) { //№ месяца, в который был минимум продаж (вопрос - почему тип данных массива long?)
+    public int minSales(int[] sales) { //№ месяца, в который был минимум продаж (вопрос - почему тип данных массива long?) (4 задание)
         int minMonth = 0; // переменная для хранения номера ячейки в массиве месяца, в котором были минимальные продажи
         int month = 0; // переменная для индекса рассматриваемого месяца в массиве
-        for (long sale : sales) {
+        for (int sale : sales) {
             // sales[minMonth] - продажи в месяце minMonth
             // sale - продажи в рассматриваемом месяце
             if (sale <= sales[minMonth]) {
@@ -44,8 +44,8 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int minCalcAverageSum(int[] sales) {     // задание 5
-        float a = calcAverageSum(sales);
+    public int minCalcAverageSum(int[] sales) {  // задание 5, количество месяцев продаж ниже среднего
+        float a = calcAverageSum(sales); //вызываем метод № 2
         int month = 0;
         for (float sale : sales) {
             if (sale < a) {
